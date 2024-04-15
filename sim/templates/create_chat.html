@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Chat Page</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e8eff1;
+            margin: 0;
+            color: #333;
+        }
+        .create-chat-container {
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .create-chat-container h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: #0a3d62;
+        }
+        .create-chat-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .create-chat-container input {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ced6e0;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+        .create-chat-container button {
+            padding: 15px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .create-chat-container button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="create-chat-container">
+        <h2>Create a New Chat</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="chat_name" placeholder="Chat Name">
+            <input type="password" name="password" placeholder="Password">
+            <button type="submit">Create Chat</button>
+        </form>
+    </div>
+</body>
+</html>
